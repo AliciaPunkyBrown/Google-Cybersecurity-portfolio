@@ -1,0 +1,27 @@
+analyst@f5f37b53f3a8:~$ mkdir logs
+analyst@f5f37b53f3a8:~$ ls
+logs  notes  reports  temp
+analyst@f5f37b53f3a8:~$ rmdir temp
+analyst@f5f37b53f3a8:~$ ls
+logs  notes  reports
+analyst@f5f37b53f3a8:~$ cd /home/analyst/notes
+analyst@f5f37b53f3a8:~/notes$ cd notes
+-bash: cd: notes: No such file or directory
+analyst@f5f37b53f3a8:~/notes$ mv Q3patches.txt /home/analyst/reports/
+analyst@f5f37b53f3a8:~/notes$ ls /home/analyst/reports
+Q1patches.txt  Q2patches.txt  Q3patches.txt
+analyst@f5f37b53f3a8:~/notes$ rm tempnotes.txt
+analyst@f5f37b53f3a8:~/notes$ ls
+analyst@f5f37b53f3a8:~/notes$ touch tasks.txt
+analyst@f5f37b53f3a8:~/notes$ ls
+tasks.txt
+analyst@f5f37b53f3a8:~/notes$ nano tasks.txt
+  GNU nano 3.2                         tasks.txt                          Modified  
+
+  Completed tasks
+
+  1. Managed file structure in /home/analyst clear
+
+analyst@f5f37b53f3a8:~/notes$ cat tasks.txt
+ Completed tasks
+  1. Managed file structure in /home/analyst
