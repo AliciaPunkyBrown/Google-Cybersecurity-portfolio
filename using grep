@@ -1,0 +1,36 @@
+I now have practical experience in using grep to:
+
+search for specific information contained in files, and
+find files containing specific strings that were piped into grep.
+
+analyst@acfbc2b8b072:~$ ^C
+analyst@acfbc2b8b072:~$ 
+analyst@acfbc2b8b072:~$ cd logs
+analyst@acfbc2b8b072:~/logs$ grep error server_logs.txt
+2022-09-28 13:56:22 error   The password is incorrect
+2022-09-28 15:56:22 error   The username is incorrect
+2022-09-28 16:56:22 error   The password is incorrect
+2022-09-29 13:56:22 error   An unexpected error occurred
+2022-09-29 15:56:22 error   Unauthorized access
+2022-09-29 16:56:22 error   Unauthorized access
+analyst@acfbc2b8b072:~/logs$ cd /home/analyst/reports/users
+analyst@acfbc2b8b072:~/reports/users$ ls | grep Q1
+Q1_access.txt
+Q1_added_users.txt
+Q1_deleted_users.txt
+analyst@acfbc2b8b072:~/reports/users$ ls | grep access
+Q1_access.txt
+Q2_access.txt
+Q3_access.txt
+Q4_access.txt
+analyst@acfbc2b8b072:~/reports/users$ ls
+Q1_access.txt         Q2_added_users.txt    Q3_deleted_users.txt
+Q1_added_users.txt    Q2_deleted_users.txt  Q4_access.txt
+Q1_deleted_users.txt  Q3_access.txt         Q4_added_users.txt
+Q2_access.txt         Q3_added_users.txt    Q4_deleted_users.txt
+analyst@acfbc2b8b072:~/reports/users$ grep jhill Q2_deleted_users.txt
+1025         jhill     Sales
+analyst@acfbc2b8b072:~/reports/users$ grep "Human Resources" Q4_added_users.txt
+1151         sshah     Human Resources
+1145         msosa     Human Resources
+analyst@acfbc2b8b072:~/reports/users$ 
