@@ -1,0 +1,103 @@
+SELECT * 
+FROM machines;
++--------------+------------------+----------------+---------------+-------------+
+| y765z123a548 | OS 2             | Email Client 2 | 2021-06-01    |        1154 |
+| y943z930a241 | OS 1             | Email Client 2 | 2021-09-01    |        1102 |
+| y976z753a267 | OS 2             | Email Client 2 | 2021-06-01    |        1024 |
+| z381a365b233 | OS 3             | Email Client 2 | 2021-12-01    |        1025 |
+| z451a308b518 | OS 2             | Email Client 1 | 2021-03-01    |        1051 |
+| z566a147b347 | OS 1             | Email Client 1 | 2021-12-01    |        1129 |
+| z654a154b259 | OS 2             | Email Client 2 | 2021-12-01    |        1077 |
+| z803a233b718 | OS 1             | Email Client 2 | 2021-12-01    |        1181 |
+| z821a946b264 | OS 3             | Email Client 2 | 2021-06-01    |           0 |
+| z942a966b589 | OS 3             | Email Client 1 | 2021-09-01    |        1155 |
+| ....         |                  |                |               |             |
++--------------+------------------+----------------+---------------+-------------+
+200 rows in set (0.038 sec)
+
+ -> FROM machines 
+    -> 
+    -> INNER JOIN employees ON machines.device_id = employees.device_id;
++--------------+------------------+----------------+---------------+-------------+-------------+--------------+----------+------------------------+-------------+
+| device_id    | operating_system | email_client   | OS_patch_date | employee_id | employee_id | device_id    | username | department             | office      |
++--------------+------------------+----------------+---------------+-------------+-------------+--------------+----------+------------------------+-------------+
+| a320b137c219 | OS 2             | Email Client 2 | 2021-03-01    |        1000 |        1000 | a320b137c219 | elarson  | Marketing              | East-170    |
+| b239c825d303 | OS 1             | Email Client 1 | 2021-03-01    |        1001 |        1001 | b239c825d303 | bmoreno  | Marketing              | Central-276 |
+| c116d593e558 | OS 3             | Email Client 1 | 2021-09-01    |        1002 |        1002 | c116d593e558 | tshah    | Human Resources        | North-434   |
+| d394e816f943 | OS 3             | Email Client 2 | 2021-03-01    |        1003 |        1003 | d394e816f943 | sgilmore | Finance                | South-153   |
+| e218f877g788 | OS 2             | Email Client 1 | 2021-09-01    |        1004 |        1004 | e218f877g788 | eraab    | Human Resources        | South-127   |
+| f551g340h864 | OS 3             | Email Client 2 | 2021-12-01    |        1005 |        1005 | f551g340h864 | gesparza | Human Resources        | South-366   |
+| g329h357i597 | OS 1             | Email Client 2 | 2021-06-01    |        1006 |        1006 | g329h357i597 | alevitsk | Information Technology | East-320    |
+| h174i497j413 | OS 2             | Email Client 1 | 2021-03-01    |        1007 |        1007 | h174i497j413 | wjaffrey | Finance                | North-406   |
+| i858j583k571 | OS 2             | Email Client 2 | 2021-06-01    |        1008 |        1008 | i858j583k571 | abernard | Finance                | South-170   |
+| k242l212m542 | OS 1             | Email Client 1 | 2021-03-01    |        1010 |        1010 | k242l212m542 | jlansky  | Finance                | South-109   |
+| .....        |                  |                |               |             |             |              |          |                        |             |
++--------------+------------------+----------------+---------------+-------------+-------------+--------------+----------+------------------------+-------------+
+200 rows in set (0.038 sec)
+
+ -> FROM machines 
+    -> 
+    -> LEFT JOIN employees ON machines.device_id = employees.device_id;
++--------------+------------------+----------------+---------------+-------------+-------------+--------------+----------+------------------------+-------------+
+| device_id    | operating_system | email_client   | OS_patch_date | employee_id | employee_id | device_id    | username | department             | office      |
++--------------+------------------+----------------+---------------+-------------+-------------+--------------+----------+------------------------+-------------+
+| d280e557f635 | OS 3             | Email Client 1 | 2021-03-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| e121f951g937 | OS 3             | Email Client 2 | 2021-06-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| f117g394h201 | OS 1             | Email Client 2 | 2021-03-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| g770h829i938 | OS 2             | Email Client 1 | 2021-09-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| s918t412u294 | OS 3             | Email Client 2 | 2021-12-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| t801u630v138 | OS 2             | Email Client 2 | 2021-03-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| u113v483w811 | OS 3             | Email Client 2 | 2021-06-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| v846w200x439 | OS 1             | Email Client 1 | 2021-06-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| w981x771y326 | OS 2             | Email Client 2 | 2021-06-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| x561y839z458 | OS 2             | Email Client 1 | 2021-09-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| y246z508a775 | OS 2             | Email Client 1 | 2021-12-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| z821a946b264 | OS 3             | Email Client 2 | 2021-06-01    |           0 |        NULL | NULL         | NULL     | NULL                   | NULL        |
+| .....        |                  |                |               |             |             |              |          |                        |             |
++--------------+------------------+----------------+---------------+-------------+-------------+--------------+----------+------------------------+-------------+
+200 rows in set (0.038 sec)
+
+ -> FROM machines 
+    -> 
+    -> RIGHT JOIN employees ON machines.device_id = employees.device_id;
++--------------+------------------+----------------+---------------+-------------+-------------+--------------+----------+------------------------+-------------+
+| device_id    | operating_system | email_client   | OS_patch_date | employee_id | employee_id | device_id    | username | department             | office      |
++--------------+------------------+----------------+---------------+-------------+-------------+--------------+----------+------------------------+-------------+
+| f963g637h851 | OS 1             | Email Client 1 | 2021-06-01    |        1187 |        1187 | f963g637h851 | bbode    | Finance                | East-351    |
+| g164h566i795 | OS 1             | Email Client 1 | 2021-09-01    |        1188 |        1188 | g164h566i795 | noshiro  | Finance                | West-252    |
+| h784i120j837 | OS 3             | Email Client 2 | 2021-12-01    |        1189 |        1189 | h784i120j837 | slefkowi | Human Resources        | West-342    |
+| NULL         | NULL             | NULL           | NULL          |        NULL |        1190 | NULL         | kcarter  | Marketing              | Central-270 |
+| NULL         | NULL             | NULL           | NULL          |        NULL |        1191 | NULL         | shakimi  | Marketing              | Central-366 |
+| k570l183m949 | OS 3             | Email Client 1 | 2021-12-01    |        1192 |        1192 | k570l183m949 | rlaghari | Information Technology | East-138    |
+| l186m618n319 | OS 1             | Email Client 2 | 2021-12-01    |        1193 |        1193 | l186m618n319 | esantiag | Information Technology | Central-300 |
+| m340n287o441 | OS 2             | Email Client 2 | 2021-09-01    |        1194 |        1194 | m340n287o441 | zwarren  | Human Resources        | West-212    |
+| n516o853p957 | OS 1             | Email Client 1 | 2021-09-01    |        1195 |        1195 | n516o853p957 | orainier | Finance                | East-346    |
+| o225p357q829 | OS 3             | Email Client 1 | 2021-12-01    |        1196 |        1196 | o225p357q829 | sshah2   | Information Technology | South-385   |
+| p791q114r509 | OS 2             | Email Client 1 | 2021-09-01    |        1197 |        1197 | p791q114r509 | aabara   | Information Technology | North-159   |
+| q308r573s459 | OS 3             | Email Client 1 | 2021-03-01    |        1198 |        1198 | q308r573s459 | jmartine | Marketing              | South-117   |
+| r520s571t459 | OS 2             | Email Client 2 | 2021-03-01    |        1199 |        1199 | r520s571t459 | areyes   | Human Resources        | East-100    |
+| .....        |                  |                |               |             |             |              |          |                        |             |
++--------------+------------------+----------------+---------------+-------------+-------------+--------------+----------+------------------------+-------------+
+200 rows in set (0.038 sec)
+
+ -> FROM employees 
+    -> 
+    -> INNER JOIN log_in_attempts ON employees.username = log_in_attempts.username;
++-------------+--------------+----------+------------------------+-------------+----------+----------+------------+------------+---------+-----------------+---------+
+| employee_id | device_id    | username | department             | office      | event_id | username | login_date | login_time | country | ip_address      | success |
++-------------+--------------+----------+------------------------+-------------+----------+----------+------------+------------+---------+-----------------+---------+
+|        1032 | g773h303i639 | jrafael  | Information Technology | Central-309 |        1 | jrafael  | 2022-05-09 | 04:56:27   | CAN     | 192.168.243.140 |       0 |
+|        1026 | a998b568c863 | apatel   | Human Resources        | West-320    |        2 | apatel   | 2022-05-10 | 20:27:27   | CAN     | 192.168.205.12  |       0 |
+|        1031 | f419g188h578 | dkot     | Marketing              | West-408    |        3 | dkot     | 2022-05-09 | 06:47:41   | USA     | 192.168.151.162 |       0 |
+|        1031 | f419g188h578 | dkot     | Marketing              | West-408    |        4 | dkot     | 2022-05-08 | 02:00:39   | USA     | 192.168.178.71  |       0 |
+|        1032 | g773h303i639 | jrafael  | Information Technology | Central-309 |        5 | jrafael  | 2022-05-11 | 03:05:59   | CANADA  | 192.168.86.232  |       0 |
+|        1020 | u899v381w363 | arutley  | Marketing              | South-351   |        6 | arutley  | 2022-05-12 | 17:00:59   | MEXICO  | 192.168.3.24    |       0 |
+|        1004 | e218f877g788 | eraab    | Human Resources        | South-127   |        7 | eraab    | 2022-05-11 | 01:45:14   | CAN     | 192.168.170.243 |       0 |
+|        1035 | j236k303l245 | bisles   | Sales                  | South-171   |        8 | bisles   | 2022-05-08 | 01:30:17   | US      | 192.168.119.173 |       0 |
+|        1033 | NULL         | yappiah  | Information Technology | West-387    |        9 | yappiah  | 2022-05-11 | 13:47:29   | MEX     | 192.168.59.136  |       0 |
+|        1032 | g773h303i639 | jrafael  | Information Technology | Central-309 |       10 | jrafael  | 2022-05-12 | 09:33:19   | CANADA  | 192.168.228.221 |       0 |
+| .....        |                  |                |               |             |             |              |          |                        |             |
++--------------+------------------+----------------+---------------+-------------+-------------+--------------+----------+------------------------+-------------+
+200 rows in set (0.008 sec)
+
+
