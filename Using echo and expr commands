@@ -1,0 +1,16 @@
+In this activity, I'm using the Echo and expr commands.
+analyst@ef1b91278df2:~$ echo hello
+hello
+analyst@ef1b91278df2:~$ echo "hello"
+hello
+analyst@ef1b91278df2:~$ echo "Hello, Alicia Nicole Brown"
+Hello, Alicia Nicole Brown
+analyst@ef1b91278df2:~$ expr 32 - 8
+24
+analyst@ef1b91278df2:~$ expr 3500 * 12
+42000
+analyst@ef1b91278df2:~$ echo "123456789 * 123456789987654321"
+123456789 * 123456789987654321
+analyst@ef1b91278df2:~$ echo "The echo command in the Bash shell outputs a specified string of text."
+The echo command in the Bash shell outputs a specified string of text.
+The expr command performs basic mathematical calculations and can be useful when I need to quickly perform a calculation
